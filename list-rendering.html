@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div id="app">
+        <ul>
+            <li v-for="post in posts" :key="post.id">{{post.id}}</li>
+            <h3 data="numberId">{{numberId}}</h3>
+            <button @click="increaseId">INCREASE</button>
+        </ul>
+        <table>
+            <tr>
+                <td v-for="post in posts" :key="post.id">{{post.body}}</td>
+            </tr>
+        </table>
+	</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+	
+	let vm = new Vue({
+		el : '#app',
+		data: {
+            numberId:1,
+            posts: [
+                { id: 1, title: 'post 1', body: 'yeah'},
+                { id: 2, title: 'post 2', body: 'yeah'},
+                { id: 3, title: 'post 3', body: 'yeah'},
+                { id: 4, title: 'post 4', body: 'yeah'}
+            ]
+		},
+        methods:{
+            increaseId()
+            {
+                this.numberId++;
+            }
+        }
+	});
+
+</script>
+
+</body>
+</html>

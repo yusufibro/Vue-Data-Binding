@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+    <style>
+        .active{
+            color:green;
+        }
+        .notActive{
+            color:red;
+        }
+    </style>
+
+	<div id="app">
+        <h1 class="static" :class="{active: isActive, 'notActive' : hasError}">{{ message }}</h1>
+        <!-- yang bawah lebih simpel karean menggunakan if else array-->
+        <h1 :class="[isActive ? 'active' : 'notActive']">{{ message }}</h1>
+        
+	</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+	
+	let vm = new Vue({
+		el : '#app',
+		data: {
+			isActive: false,
+            hasError: true,
+			message: 'Hello ',
+		}
+	});
+
+</script>
+
+</body>
+</html>

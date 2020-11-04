@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div id="app">
+            <form action="">
+                <div class="col-sm-6">
+                    <input v-model="options" type="text" class="form-control mt-4">
+                </div>
+
+                <fieldset class="form-group">
+                    <legend>Radio Buttons</legend>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input v-model="options" type="checkbox" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option-1">
+                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input v-model="options" type="checkbox" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option-2">
+                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input v-model="options" type="checkbox" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option-3">
+                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        </label>
+                    </div>
+                </fieldset>
+                <p>Your Selected {{ options.join(', ') }}</p>
+
+            </form>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+    let vm = new Vue ({
+        el: '#app',
+        data: {
+            options: [],
+            message: ''
+        }
+    })
+
+</script>
+</body>
+</html>
